@@ -10,5 +10,12 @@ jobs:
         node-version: 18.x
         cache: "yarn"
     - run: yarn install
+    - name: add fake values into dotenv
+      run: |
+        echo API_URL=https://example.org/ > .env
+        echo API_KEY=1234 >> .env
+        echo PRIVATE_KEY=1234 >> .env
+        echo NETWORK=not_used >> .env
+        echo ETHERSCAN_API_KEY=1234 >> .env
     - run: npx hardhat run &
     - run: npx hardhat compile --network localhost

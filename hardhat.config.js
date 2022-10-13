@@ -10,6 +10,7 @@ module.exports = {
   solidity: "0.8.17",
   defaultNetwork: NETWORK,
   networks: {
+    hardhat: { },
     [NETWORK]: {
       url: API_URL,
       accounts: [`0x${PRIVATE_KEY}`]

@@ -10,4 +10,5 @@ jobs:
         node-version: 18.x
         cache: "yarn"
     - run: yarn install
-    - run: yarn compile
+    - run: npx hardhat run &
+    - run: npx hardhat compile --network localhost

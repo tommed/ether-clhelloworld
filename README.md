@@ -10,7 +10,7 @@
 * `yarn add @nomiclabs/hardhat-ethers` for deploy and interact scripts
 * `yarn add -D @nomiclabs/hardhat-etherscan` for etherscan integration
 
-## Compile & Deploy
+## Compile & Deploy
 
 * `yarn compile`
 * `yarn deploy`

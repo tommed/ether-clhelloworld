@@ -3,20 +3,19 @@ on: [push]
 jobs:
   compile:
     runs-on: ubuntu-latest
+    env:
+      # NOTE: this private key is from the hardhat node and is known - so no leaks here
+      PRIVATE_KEY: "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
+      API_URL: https://example.org/
+      API_KEY: "1234"
+      NETWORK: not_used
+      ETHERSCAN_API_KEY: "1234"
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/setup-node@v3
       with:
-        node-version: 18.x
+        node-version: 18
         cache: "yarn"
     - run: yarn install
-    # NOTE: this private key is from the hardhat node and is known - so no leaks here
-    - name: add fake values into dotenv
-      run: |
-        echo PRIVATE_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 >> .env
-        echo API_URL=https://example.org/ > .env
-        echo API_KEY=1234 >> .env
-        echo NETWORK=not_used >> .env
-        echo ETHERSCAN_API_KEY=1234 >> .env
     - run: npx hardhat run &
     - run: npx hardhat compile --network localhost

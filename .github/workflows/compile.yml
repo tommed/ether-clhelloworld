@@ -10,11 +10,12 @@ jobs:
         node-version: 18.x
         cache: "yarn"
     - run: yarn install
+    # NOTE: this private key is from the hardhat node and is known - so no leaks here
     - name: add fake values into dotenv
       run: |
+        echo PRIVATE_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 >> .env
         echo API_URL=https://example.org/ > .env
         echo API_KEY=1234 >> .env
-        echo PRIVATE_KEY=1234 >> .env
         echo NETWORK=not_used >> .env
         echo ETHERSCAN_API_KEY=1234 >> .env
     - run: npx hardhat run &

@@ -19,3 +19,7 @@ jobs:
     - run: yarn install
     - run: npx hardhat run &
     - run: npx hardhat compile --network localhost
+    - uses: actions/upload-artifact@v3
+      with:
+        name: CLHelloWorld-Contract
+        path: artifacts/contracts/*.json

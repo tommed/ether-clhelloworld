@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "compile": "npx hardhat compile",
-    "deploy": "npx hardhat run scripts/deploy.js",
+    "deploy-clhw": "npx hardhat run scripts/deploy-clhw.js",
+    "deploy-nft": "npx hardhat run scripts/deploy-nft.js",
+    "deploy-nftmd": "npx hardhat run scripts/deploy-nftmd.js",
     "interact": "npx hardhat run scripts/interact.js"
   },
   "keywords": [],
@@ -17,7 +19,9 @@
   },
   "dependencies": {
     "@nomiclabs/hardhat-ethers": "^2.2.0",
+    "@openzeppelin/contracts": "^4.7.3",
     "dotenv": "^16.0.3",
-    "ethers": "^5.0.0"
+    "ethers": "^5.0.0",
+    "node-fetch": "2"
   }
 }

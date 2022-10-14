@@ -2,6 +2,12 @@
 
 **"Hello, World!"** smart contract for Ethereum.
 
+## Examples
+
+* [CLHelloWorld.sol](./contracts/CLHelloWorld.sol) - the most basic smart contract with a single state variable
+* [NFT.sol](./contracts/NFT.sol) - the most basic NFT from [this opensea tutorial](https://docs.opensea.io/docs/setting-up-your-smart-contract-project)
+* [NFTMeta.sol](./contracts/NFTMeta.sol) - basic NFT with JSON meta-data from [this opensea tutorial](https://docs.opensea.io/docs/part-3-adding-metadata-and-payments-to-your-contract)
+
 ## Developer Steps to create this project
 
 * `npm init --yes`

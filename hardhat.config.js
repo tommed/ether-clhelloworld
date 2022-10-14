@@ -2,6 +2,7 @@
 require('dotenv').config();
 require('@nomiclabs/hardhat-ethers');
 require('@nomiclabs/hardhat-etherscan');
+require('./scripts/interact-nft');
 
 const { API_URL, PRIVATE_KEY, NETWORK, ETHERSCAN_API_KEY } = process.env;
 
